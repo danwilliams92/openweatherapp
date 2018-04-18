@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather</title>
+	</head>
+<body>
+
+	Type a city to get the current weather: <input type="text" id="cityQuery">
+	<button id="getWeather">Get Forecast</button>
+	<div id="forecast-container">
+		<p id="description"></p>
+		<p id="temperature"></p>
+		<p id="humidity"></p>
+		
+	</div>
+	
+	<h4>Or</h4>
+	<button id="getUserWeather">Get Weather For My Location</button>
+	<div id="user-forecast-container">
+		<p id="user-weather-description"></p>
+		<p id="user-temperature"></p>
+		<p id="user-humidity"></p>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="main.js"></script>
+	
+</body>
+</html>
