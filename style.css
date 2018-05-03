@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+body{
+	font-family: 'Lora', serif;
+}
+
+/* navigate back to portfolio page */
+
+.back-to-main{
+		width:100vw;
+		text-align:center;
+		background-color:#B8B7B7;
+}
+
+.back-to-main a {
+	color:#fff;
+	text-decoration:none;
+	font-size:1.5em;
+}
+
+/* end */
+
+
+.container{
+	width:50vw;
+	margin:auto;
+	text-align:center;
+	border: 3px solid #222;
+	border-radius: 8px;
+}
+
+#cityQuery{
+	margin-top:1em;
+}
+
+input[type=text]{
+	width:50%;
+}
+
+button{
+	font-size:1.5em;
+	margin-top:0.5em;
+	padding: 14px 28px;
+	border-radius:8px;
+	border:none;
+	width:50%;
+	color:#fff;
+}
+
+button#getWeather{
+	background-color:#1244EE;
+	transition:0.5s
+}
+
+button#getWeather:hover{
+	background-color:#458DEA;
+	transition:0.5s;
+}
+
+button#getUserWeather{
+	background-color:#458DEA;
+	transition:0.5s;
+}
+
+button#getUserWeather:hover{
+	background-color:#1244EE;
+	transition:0.5s;
+}
+
+span.weather-info{
+	color:#EE3B3B;
+	font-size:1.5em;
+	padding:10px;
+}

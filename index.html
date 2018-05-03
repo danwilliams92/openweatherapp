@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Weather</title>
+	<title>Your Weather Forecast</title>
+	<link rel="stylesheet" href="style.css">
 	</head>
 <body>
-
-	Type a city to get the current weather: <input type="text" id="cityQuery">
-	<button id="getWeather">Get Forecast</button>
-	<div id="forecast-container">
-		<p id="description"></p>
-		<p id="temperature"></p>
-		<p id="humidity"></p>
+		<div class="back-to-main">
+			<a href="../portfolio.html">Back to Main Site</a>
+		</div>
+	<div class="container">
+		<h2>Type a city to get the current weather:</h2> <br> 
+		<input type="text" id="cityQuery"><br>
+		<button id="getWeather">Get Forecast</button>
+		<div id="forecast-container">
+			<p id="description"></p>
+			<p id="temperature"></p>
+			<!-- <p id="humidity"></p> -->
+			<p id="sunrise"></p>
+			<p id="sunset"></p>
+			
+		</div>
 		
-	</div>
-	
-	<h4>Or</h4>
-	<button id="getUserWeather">Get Weather For My Location</button>
-	<div id="user-forecast-container">
-		<p id="user-weather-description"></p>
-		<p id="user-temperature"></p>
-		<p id="user-humidity"></p>
+		<h2>Or</h2>
+		<button id="getUserWeather">Get Weather For My Location</button>
+		<div id="user-forecast-container">
+			<p id="user-weather-description"></p>
+			<p id="user-temperature"></p>
+			<!-- <p id="user-humidity"></p> -->
+			<p id="user-sunrise"></p>
+			<p id="user-sunset"></p>
+		</div>
 	</div>
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
