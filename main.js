@@ -9,8 +9,8 @@ $(document).ready(function(){
 				dataType: 'json',
 				url: 'http://api.openweathermap.org/data/2.5/weather?q=' + $('#cityQuery').val() + '&units=metric' + '&appid=' + apiKey,
 				success: function(data){
-				sunrise_time = data["sys"]["sunrise"];
-				sunset_time = data["sys"]["sunset"];	
+				sunrise_time = data.sys.sunrise;
+				sunset_time = data.sys.sunset;	
 				
 					$("#description").html("The weather in " + $('#cityQuery').val() + " is: " + "<br>" + "<span class='weather-info'>" + data["weather"][0]["description"] + "</span>");
 					$("#temperature").html("The temperature is: " + "<br>" + "<span class='weather-info'>" + data.main.temp + " &#8451;" + "</span>");
@@ -28,9 +28,10 @@ $(document).ready(function(){
 					
 					$("#sunset").html("Sunset is at: " + "<br>" + "<span class='weather-info'>" + timestr2 + "</span>");
 
-				}
+				},
+				error: errorMessage()
 	
-		});
+			});
 	});
 	
 	// Use geolocation to get browser's local weather
@@ -50,9 +51,9 @@ $(document).ready(function(){
 						dataType: 'json',
 						url: ("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longit + '&units=metric' + "&appid=" + apiKey),
 						success: function(data){
-							sunset_time = data["sys"]["sunset"];
-							sunrise_time = data["sys"]["sunrise"];
-							city_name = data["name"];
+							sunset_time = data.sys.sunset;
+							sunrise_time = data.sys.sunrise;
+							city_name = data.name;
 							$("#user-weather-description").html("The weather in " + city_name + " is: " + "<br>" +  "<span class='weather-info'>" + data["weather"][0]["description"] + "</span>");
 							$("#user-temperature").html("The temperature is: " + "<br>" +  "<span class='weather-info'>" + data.main.temp + " &#8451;" + "</span>");
 							
@@ -69,11 +70,16 @@ $(document).ready(function(){
 							var timestr2 = date2.toLocaleTimeString();
 							
 							$("#user-sunset").html("Sunset is at: " + "<br>" + "<span class='weather-info'>" + timestr2 + "</span>");
-						}
+						},
+						//error: errorMessage()
 				});
 			}
+		} else {
+			errorMessage();
 		}
 	});
 	
-	
+	function errorMessage(){
+		$("#error-message").html("<h3>" + "Oops, something went wrong. Please try again!" + "</h3>");
+	}
 });
